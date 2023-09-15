@@ -58,11 +58,11 @@ searchInput.addEventListener("input", () => {
   const variantElements = productContainer.querySelectorAll(".item-size");
 
   variantElements.forEach((variantElement) => {
-    const variantText = variantElement.textContent.toLowerCase();
-    if (variantText.includes(searchKey)) {
-      variantElement.style.backgroundColor = "rgb(214, 252, 100)";
+    const variantText = variantElement.textContent.toLowerCase().trim();
+    if (searchKey && variantText.includes(searchKey)) {
+      variantElement.style.backgroundColor ="rgb(214, 252, 100)";
     } else {
-      variantElement.style.backgroundColor = ""; // Reset the color if it doesn't match the searchKey
+      variantElement.style.backgroundColor = ""; // Reset the color if it doesn't match the searchKey or if searchKey is empty
     }
   });
 });
